@@ -18,6 +18,12 @@ public class Quest{
         this.playerId = playerId;
     }
 
+    public Quest(String questName, String questDesc, int xpGained){
+        this.questName = questName;
+        this.questDesc = questDesc;
+        this.xpGained = xpGained;
+    }
+
     public Quest(int questId, String questName, String questDesc, int xpGained, boolean questStatus, boolean questValue) {
         this.questId = questId;
         this.questName = questName;
@@ -56,8 +62,22 @@ public class Quest{
     }
 
     public void questReward(Player player){
-        if (questStatus) {
-            player.gainXp(xpGained);
+        if (questStatus == false) {
+            System.out.println("\nquest completa");
+            player.playerXp += xpGained;
+            if (player.isNextLvl()){
+                player.LvlUp(xpGained);
+                questStatus = true;
+            }
+        } else {
+            System.out.println("\nquest já foi feita");
         }
+    }
+
+    public String toString(){
+        return "\nnome da quest: " + questName
+                + "\ndescricao: " + questDesc
+                + "\nstatus da quest: " + questStatus
+                + "\nxp ganho na quest: " + xpGained + " xp";
     }
 }

@@ -6,30 +6,41 @@ public class Player extends User {
     private int playerId;
     public int playerXp;
     public int playerLvl;
-    public int nextLvl = playerLvl * 100;
 
     public int strength, intelligence, constitution, charisma ;
 
-    public void gainXp(int quantXp){
-        if(!isNextLvl()) {
-            playerXp += quantXp;
-
-            System.out.println("ganhou xp");
-        } else {
-            playerLvl++;
-            playerXp = nextLvl - playerXp;
-
-            System.out.println("upou de lvl");
-        }
+    public Player(String playerName) {
+        this.playerName = playerName;
+        this.playerLvl = 1;
+        this.playerXp = 1;
     }
 
     public boolean isNextLvl(){
-        return playerXp >= nextLvl;
+        return playerXp >= playerLvl * 100;
+    }
+
+    public void LvlUp(int quantXp){
+        if(isNextLvl() == false) {
+            playerXp += quantXp;
+
+            System.out.println("\nganhou xp");
+        } else {
+            playerXp = playerXp - playerLvl * 100;
+            playerLvl++;
+
+            System.out.println("\nupou de lvl");
+        }
     }
 
     public void changePlayerName(String actualName){
         playerName = actualName;
 
-        System.out.println("nome atualizado");
+        System.out.println("\nnome atualizado");
+    }
+
+    public String toString(){
+        return "\nnome: " + playerName
+                + "\nlevel: " + playerLvl
+                + "\nxp do player: " + playerXp;
     }
 }

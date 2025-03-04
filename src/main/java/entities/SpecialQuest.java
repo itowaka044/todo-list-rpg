@@ -11,7 +11,7 @@ public class SpecialQuest extends Quest{
 
     public void specialQuestRew(Player player){
         if (questStatus) {
-            player.gainXp(xpGained * (bonusXp / 100));
+            player.LvlUp(xpGained * (bonusXp / 100));
         }
     }
 
