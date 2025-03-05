@@ -20,7 +20,7 @@ public class Player extends User {
     }
 
     public void LvlUp(int quantXp){
-        if(isNextLvl() == false) {
+        if(!isNextLvl()) {
             playerXp += quantXp;
 
             System.out.println("\nganhou xp");
