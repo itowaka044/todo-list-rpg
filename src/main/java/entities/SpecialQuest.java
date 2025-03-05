@@ -4,8 +4,8 @@ public class SpecialQuest extends Quest{
 
     private int bonusXp;
 
-    public SpecialQuest(int questId, String questName, String questDesc, int xpGained, int playerId, int bonusXp) {
-        super(questId, questName, questDesc, xpGained, playerId);
+    public SpecialQuest(int questId, String questName, String questDesc, int xpGained, int bonusXp) {
+        super(questId, questName, questDesc, xpGained);
         this.bonusXp = bonusXp;
     }
 

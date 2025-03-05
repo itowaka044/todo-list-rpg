@@ -7,9 +7,5 @@ public class RepositoriesTest {
     @Test
     void saveQuestToDB(){
 
-        Quest quest = new Quest("correr", "ficar rapido", 200);
-
-        QuestRepository questRepository;
-
     }
 }

@@ -10,12 +10,14 @@ public class Quest{
     public boolean questValue;
     public int playerId;
 
-    public Quest(int questId, String questName, String questDesc, int xpGained, int playerId) {
+    public Quest() {
+    }
+
+    public Quest(int questId, String questName, String questDesc, int xpGained) {
         this.questId = questId;
         this.questName = questName;
         this.questDesc = questDesc;
         this.xpGained = xpGained;
-        this.playerId = playerId;
     }
 
     public Quest(String questName, String questDesc, int xpGained){

@@ -59,3 +59,8 @@ create table specialQuest(
     primary key (id),
     foreign key (questId) references quest(id)
 );
+
+
+insert into quest (questName, questDesc, xpGained) values (?, ?, ?)
+
+select questName, questDesc, xpGained from quest
