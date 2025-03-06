@@ -9,6 +9,34 @@ public class Player extends User {
 
     public int strength, intelligence, constitution, charisma ;
 
+    public String getPlayerName() {
+        return playerName;
+    }
+
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
+    }
+
+    public int getCharisma() {
+        return charisma;
+    }
+
+    public int getConstitution() {
+        return constitution;
+    }
+
+    public int getIntelligence() {
+        return intelligence;
+    }
+
+    public int getPlayerLvl() {
+        return playerLvl;
+    }
+
+    public int getStrength() {
+        return strength;
+    }
+
     public Player(String playerName) {
         this.playerName = playerName;
         this.playerLvl = 1;

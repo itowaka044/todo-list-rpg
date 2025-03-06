@@ -6,7 +6,9 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QuestRepository {
+public class QuestRepository extends ConnectToDatabase{
+
+    private ConnectToDatabase connectToDatabase;
 
     public void saveQuest(Quest quest){
         String sql = "insert into quest (questName, questDesc, xpGained) values (?, ?, ?)";
@@ -26,7 +28,7 @@ public class QuestRepository {
         }
     }
 
-    public List<Quest> showAllQuests(){
+    public List<Quest> listQuests(){
         List<Quest> quests = new ArrayList<>();
         String sql = "select id, questName, questDesc, xpGained from quest";
 

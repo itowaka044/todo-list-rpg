@@ -1,8 +1,6 @@
 package repositories;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class ConnectToDatabase {
 
@@ -12,6 +10,17 @@ public class ConnectToDatabase {
 
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(url, user, password);
+    }
+
+    public void createStatementConn(String sql) throws SQLException {
+        Connection connection = ConnectToDatabase.getConnection();
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(sql);
+    }
+
+    public void prepareStatementConn(String sql) throws SQLException{
+        Connection connection = ConnectToDatabase.getConnection();
+        PreparedStatement statement = connection.prepareStatement(sql);
     }
 
 }

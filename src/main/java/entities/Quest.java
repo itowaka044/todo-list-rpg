@@ -64,7 +64,7 @@ public class Quest{
     }
 
     public void questReward(Player player){
-        if (questStatus == false) {
+        if (!questStatus) {
             System.out.println("\nquest completa");
             player.playerXp += xpGained;
             if (player.isNextLvl()){
