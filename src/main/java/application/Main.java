@@ -13,10 +13,23 @@ public class Main {
     public static void main(String[] args) {
 
 
-        DailyQuest quest1 = new DailyQuest(1,"correr", "correr rapido", 100, 3);
+        SpecialQuest quest1 = new SpecialQuest(1,"correr", "correr rapido", 100, 3, 3);
+
+
+        Quest quest2 = new Quest(1,"correr", "correr rapido", 100, 3);
 
 
         System.out.println(quest1);
+
+        Player player1 = new Player("joao");
+
+        System.out.println(player1);
+
+        quest2.questReward(player1);
+
+        System.out.println(player1);
+
+
 
     }
 }

@@ -15,16 +15,11 @@ public class SpecialQuest extends Quest{
 
     @Override
     public void questReward(Player player){
-        if (!questStatus) {
-            System.out.println("\nquest completa");
-            player.playerXp += xpGained * xpMultiplier;
-            if (player.isNextLvl()){
-                player.LvlUp(xpGained);
-                questStatus = true;
-            }
-        } else {
-            System.out.println("\nquest ja foi feita");
-        }
+
+        xpGained *= xpMultiplier;
+
+        super.questReward(player);
+
     }
 
     @Override
