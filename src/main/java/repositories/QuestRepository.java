@@ -40,7 +40,8 @@ public class QuestRepository extends ConnectToDatabase{
                 Quest quest = new Quest(resultSet.getInt("id"),
                         resultSet.getString("questName"),
                         resultSet.getString("questDesc"),
-                        resultSet.getInt("xpGained"));
+                        resultSet.getInt("xpGained"),
+                        resultSet.getInt("questValue"));
                 quests.add(quest);
             }
 

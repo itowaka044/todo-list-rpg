@@ -23,7 +23,7 @@ public class EntitiesTest {
 
         Quest[] quest = new Quest[10];
 
-        quest[0] = new Quest("estudar", "aprender...", 100);
+        quest[0] = new Quest(1, "estudar", "aprender...", 100, 1);
 
         System.out.println(quest[0]);
 
@@ -32,9 +32,7 @@ public class EntitiesTest {
     @Test
     void resetXP(){
 
-        //resetar o xp quando subir de lvl
-
-        Quest quest = new Quest("estudar", "aprender...", 100);
+        Quest quest = new Quest(1, "estudar", "aprender...", 100, 1);
 
         Player player = new Player("joao");
 
@@ -49,7 +47,7 @@ public class EntitiesTest {
     @Test
     void createDailyQuest(){
 
-        Quest quest = new DailyQuest("malhar", "ficar forte", 50);
+        Quest quest = new DailyQuest(1,"malhar", "ficar forte", 50,1);
 
         Player player = new Player("joao");
 

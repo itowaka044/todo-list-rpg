@@ -1,13 +1,9 @@
 import entities.Player;
 import entities.Quest;
 import org.junit.jupiter.api.Test;
-import repositories.ConnectToDatabase;
 import repositories.PlayerRepository;
 import repositories.QuestRepository;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.List;
 
 public class RepositoriesTest {
@@ -15,7 +11,7 @@ public class RepositoriesTest {
     @Test
     void saveQuestTest(){
 
-        Quest quest = new Quest("correr", "ficar rapido", 200);
+        Quest quest = new Quest(1, "correr", "ficar rapido", 200, 1);
 
         QuestRepository questRepository = new QuestRepository();
 

@@ -2,17 +2,38 @@ package entities;
 
 public class SpecialQuest extends Quest{
 
-    private int bonusXp;
+    private int xpMultiplier;
 
-    public SpecialQuest(int questId, String questName, String questDesc, int xpGained, int bonusXp) {
-        super(questId, questName, questDesc, xpGained);
-        this.bonusXp = bonusXp;
+    public SpecialQuest(int xpMultiplier) {
+        this.xpMultiplier = xpMultiplier;
     }
 
-    public void specialQuestRew(Player player){
-        if (questStatus) {
-            player.LvlUp(xpGained * (bonusXp / 100));
+    public SpecialQuest(int questId, String questName, String questDesc, int xpGained, int questValue, int xpMultiplier) {
+        super(questId, questName, questDesc, xpGained, questValue);
+        this.xpMultiplier = xpMultiplier;
+    }
+
+    @Override
+    public void questReward(Player player){
+        if (!questStatus) {
+            System.out.println("\nquest completa");
+            player.playerXp += xpGained * xpMultiplier;
+            if (player.isNextLvl()){
+                player.LvlUp(xpGained);
+                questStatus = true;
+            }
+        } else {
+            System.out.println("\nquest ja foi feita");
         }
+    }
+
+    @Override
+    public String toString(){
+        return "\nnome da quest: " + questName
+                + "\ndescricao: " + questDesc
+                + "\nstatus da quest: " + questStatus
+                + "\nxp da quest: " + xpGained + " xp"
+                + "\nmultiplicador de xp: " + xpMultiplier;
     }
 
 }

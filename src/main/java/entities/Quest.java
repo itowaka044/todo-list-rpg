@@ -7,31 +7,16 @@ public class Quest{
     public String questDesc;
     public int xpGained;
     public boolean questStatus;
-    public boolean questValue;
-    public int playerId;
+    public int questValue;
 
     public Quest() {
     }
 
-    public Quest(int questId, String questName, String questDesc, int xpGained) {
+    public Quest(int questId, String questName, String questDesc, int xpGained, int questValue) {
         this.questId = questId;
         this.questName = questName;
         this.questDesc = questDesc;
         this.xpGained = xpGained;
-    }
-
-    public Quest(String questName, String questDesc, int xpGained){
-        this.questName = questName;
-        this.questDesc = questDesc;
-        this.xpGained = xpGained;
-    }
-
-    public Quest(int questId, String questName, String questDesc, int xpGained, boolean questStatus, boolean questValue) {
-        this.questId = questId;
-        this.questName = questName;
-        this.questDesc = questDesc;
-        this.xpGained = xpGained;
-        this.questStatus = questStatus;
         this.questValue = questValue;
     }
 
@@ -72,7 +57,7 @@ public class Quest{
                 questStatus = true;
             }
         } else {
-            System.out.println("\nquest já foi feita");
+            System.out.println("\nquest ja foi feita");
         }
     }
 
@@ -80,6 +65,6 @@ public class Quest{
         return "\nnome da quest: " + questName
                 + "\ndescricao: " + questDesc
                 + "\nstatus da quest: " + questStatus
-                + "\nxp ganho na quest: " + xpGained + " xp";
+                + "\nxp da quest: " + xpGained + " xp";
     }
 }

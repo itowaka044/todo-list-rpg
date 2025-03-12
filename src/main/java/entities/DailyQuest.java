@@ -4,8 +4,12 @@ public class DailyQuest extends Quest{
 
     public boolean refreshQuest;
 
-    public DailyQuest(String questName, String questDesc, int xpGained){
-        super(questName, questDesc, xpGained);
+    public DailyQuest(boolean refreshQuest) {
+        this.refreshQuest = refreshQuest;
+    }
+
+    public DailyQuest(int questId, String questName, String questDesc, int xpGained, int questValue) {
+        super(questId, questName, questDesc, xpGained, questValue);
         this.refreshQuest = true;
     }
 
@@ -13,11 +17,22 @@ public class DailyQuest extends Quest{
         questStatus = false;
     }
 
+    @Override
     public String toString(){
+
+        String status;
+
+        if(!refreshQuest) {
+            status = "sim";
+        }else{
+            status = "nao";
+        }
+
         return "\nnome da quest: " + questName
                 + "\ndescricao: " + questDesc
                 + "\nstatus da quest: " + questStatus
-                + "\nxp ganho na quest: " + xpGained + " xp";
+                + "\nxp da quest: " + xpGained + " xp"
+                + "\nja foi feita: " + status;
     }
 }
 
